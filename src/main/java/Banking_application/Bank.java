@@ -20,6 +20,7 @@ public class Bank
             switch (choice)
             {
                 case 1 : accountCreation.Acc_Creation();
+                    break;
 
             }
 
