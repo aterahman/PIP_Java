@@ -65,7 +65,7 @@ public class Account_Creation
         String Bank_Balance = Long.toString(balance);
 
         SaveRecord(acc_no,acc_type,name,user_age,Bank_Balance);
-        account_record_creation(acc_no, Bank_Balance);
+        account_transaction_record_creation(acc_no, Bank_Balance);
 
     }
 
@@ -89,7 +89,7 @@ public class Account_Creation
     }
 
     //method to create a record for the account created and to log future transactions
-    public void account_record_creation(String acc_number, String first_transaction)
+    public void account_transaction_record_creation(String acc_number, String first_transaction)
     {
         //setting the path adn the file name for the csv filw
         String outputFilePath = "src\\main\\resources\\" + acc_number + "Transaction-History.csv";
