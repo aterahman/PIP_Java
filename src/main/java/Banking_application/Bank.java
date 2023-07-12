@@ -8,6 +8,7 @@ public class Bank
         Scanner sc = new Scanner(System.in);
         int choice=0;
         Account_Creation accountCreation = new Account_Creation();
+        Account account = new Account();
 
         do {
             System.out.println("----------------------********************---------------------------");
@@ -19,8 +20,11 @@ public class Bank
 
             switch (choice)
             {
-                case 1 : accountCreation.Acc_Creation();
-                    break;
+                case 1 :
+                        accountCreation.Acc_Creation();
+                         break;
+                case 2 :
+                        account.get_account_details();
 
             }
 
