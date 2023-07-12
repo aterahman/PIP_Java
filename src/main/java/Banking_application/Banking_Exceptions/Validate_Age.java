@@ -1,8 +1,8 @@
-package Banking_application.Exceptions;
+package Banking_application.Banking_Exceptions;
 
 public class Validate_Age
 {
-    public Validate_Age(int age)throws AgeException
+    public void Validate_Age(int age)throws AgeException
     {
         if(age<18)
         {
