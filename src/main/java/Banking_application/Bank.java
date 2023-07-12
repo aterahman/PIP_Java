@@ -25,7 +25,7 @@ public class Bank
             }
 
         }
-        while (choice!=0);
+        while (choice!=6);
 
 
     }
