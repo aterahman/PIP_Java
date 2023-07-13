@@ -41,7 +41,7 @@ public class Account
         System.out.println("----***TRANSACTION HISTORY OF ACCOUNT NUMBER "+ acc_number+"***----");
 
         try {
-            String file_path = "src\\main\\resources\\" + acc_number + "-Transaction-History.csv";
+            String file_path = "src\\main\\resources\\Accounts_Transactions\\" + acc_number + "-Transaction-History.csv";
             File file = new File(file_path);
 
             Reader filereader = new FileReader(file);
@@ -73,7 +73,7 @@ public class Account
 
         //getting account balance from the transaction history file
         try {
-            String file_path = "src\\main\\resources\\" + acc_number + "-Transaction-History.csv";
+            String file_path = "src\\main\\resources\\Accounts_Transactions\\" + acc_number + "-Transaction-History.csv";
             File file = new File(file_path);
 
             Reader filereader = new FileReader(file);
