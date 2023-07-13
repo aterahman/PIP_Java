@@ -14,6 +14,7 @@ public class Bank
         Account_Creation accountCreation = new Account_Creation();
         Account account = new Account();
         Transactions transactions = new Transactions();
+        Delete_account deleteAccount = new Delete_account();
 
 
         do {
@@ -69,6 +70,26 @@ public class Bank
                         transactions.deposit();
                     }
                     catch (Exception ignore){}
+                }
+
+                case 5 ->
+                {
+                    System.out.println("Enter account number of account to be removed");
+                    String acc_remove = sc.next();
+                    account.validate_accnumber();
+                    deleteAccount.remove_account(acc_remove);
+
+                }
+
+                case 6 ->
+                {
+                    System.out.println("Goodbye!!! Visit Again!!!");
+                }
+
+                default ->
+                {
+                    System.out.println("Invalid Option");
+                    System.exit(-1);
                 }
             }
 
