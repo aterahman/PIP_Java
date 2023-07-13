@@ -1,4 +1,6 @@
 package Banking_application;
+
+
 import java.util.Scanner;
 
 public class Bank
@@ -6,9 +8,10 @@ public class Bank
     public static void main(String [] args)
     {
         Scanner sc = new Scanner(System.in);
-        int choice=0;
+        int choice;
         Account_Creation accountCreation = new Account_Creation();
         Account account = new Account();
+
 
         do {
             System.out.println("----------------------********************---------------------------");
@@ -20,12 +23,31 @@ public class Bank
 
             switch (choice)
             {
-                case 1 :
-                        accountCreation.Acc_Creation();
-                         break;
-                case 2 :
-                        account.get_account_details();
+                case 1 -> {
+                    //creating a new account
+                    accountCreation.Acc_Creation();
+                }
+                case 2 ->
+                {
+                    //entering account number and checking if it exists
+                    account.validate_accnumber();
 
+                    //asking the user what they want to check
+                    System.out.println("Do you want to get:\n1. Account Balance\n2. Transaction History");
+                    int ch = sc.nextInt();
+                    switch (ch)
+                        {
+                            //getting account balance
+                            case 1: account.get_account_balance();
+                                    break;
+                            //getting the transaction history of the enterred account number
+                            case 2: account.get_account_transaction_history();
+                                    break;
+                            default: System.out.println("Invalid Input");
+                                    break;
+                        }
+
+                }
             }
 
         }
