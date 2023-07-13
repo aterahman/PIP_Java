@@ -92,16 +92,16 @@ public class Account_Creation
     public void account_transaction_record_creation(String acc_number, String first_transaction)
     {
         //setting the path adn the file name for the csv filw
-        String outputFilePath = "src\\main\\resources\\" + acc_number + "Transaction-History.csv";
+        String outputFilePath = "src\\main\\resources\\Accounts_Transactions\\" + acc_number + "-Transaction-History.csv";
 
         String date = new SimpleDateFormat("dd-MM-YYYY-HH-mm-ss").format(new java.util.Date());
         //setting headers for the CSV file
-        String [] csvHeader = {"Transaction date", "Transaction Amount", "Transaction Type", "Closing Balance"};
+        String [] csvHeader = {"Transaction Date & Time", "Transaction Amount", "Transaction Type", "Closing Balance"};
 
         //Creating a CSV file with the first transaction
         try (CSVPrinter csvPrinter = CSVFormat.DEFAULT.withHeader(csvHeader)
                 .print(Paths.get(outputFilePath), Charset.forName("UTF-8"))) {
-            csvPrinter.printRecord(date,first_transaction , "Credit",first_transaction);
+            csvPrinter.printRecord(date,first_transaction ,"Credit",first_transaction);
 
             csvPrinter.flush();
             csvPrinter.close();
