@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import Banking_application.Banking_Exceptions.Account_Creation_related.ValidateBalance;
 import Banking_application.Banking_Exceptions.Account_Creation_related.Validate_AccNumber;
 import Banking_application.Banking_Exceptions.Account_Creation_related.Validate_Age;
 import org.apache.commons.csv.CSVFormat;
@@ -19,6 +20,7 @@ public class Account_Creation
         Scanner sc = new Scanner(System.in);
         Validate_Age validateAge = new Validate_Age();
         Validate_AccNumber validate_accNumber = new Validate_AccNumber();
+        ValidateBalance validatebalance = new ValidateBalance();
 
         //Entering Account Number
         System.out.print("Enter 10-digit Account No: ");
@@ -62,6 +64,17 @@ public class Account_Creation
         //Entering starting bank balance
         System.out.print("Enter Balance: ");
         long balance = sc.nextLong();
+
+        //validating balance
+        try
+        {
+            validatebalance.ValidateBalance(balance);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
         String Bank_Balance = Long.toString(balance);
 
         SaveRecord(acc_no,acc_type,name,user_age,Bank_Balance);
