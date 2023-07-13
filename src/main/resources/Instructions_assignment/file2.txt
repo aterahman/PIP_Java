@@ -1,1 +1,1 @@
-Goto A, Goto C
+Goto A, Goto C, Goto D, Goto E
