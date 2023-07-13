@@ -56,7 +56,7 @@ public class Account_Creation
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println("Exception occured: " + e + " Please restart process!");
             System.exit(-1);
         }
         String user_age = Integer.toString(age);
@@ -72,7 +72,8 @@ public class Account_Creation
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println("Exception occured: " + e + " Please restart process!");
+            System.exit(-1);
         }
 
         String Bank_Balance = Long.toString(balance);

@@ -28,7 +28,7 @@ public class Account
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println("Exception occured: " + e + " Please restart process!");
             System.exit(-1);
         }
 
@@ -61,7 +61,8 @@ public class Account
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println("Exception occured: " + e + " Please restart process!");
+            System.exit(-1);
         }
         System.out.println("Your closing account balance is : " + acc_balance);
 
@@ -90,7 +91,8 @@ public class Account
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println("Exception occured: " + e + " Please restart process!");
+            System.exit(-1);
         }
 
         //prints the latest account balance
