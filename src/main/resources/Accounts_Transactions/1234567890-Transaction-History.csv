@@ -1,0 +1,4 @@
+Transaction Date & Time,Transaction Amount,Transaction Type,Closing Balance
+13-07-2023-14-14-14,1000000,Credit,1000000
+13-07-2023-14-14-34,5000,Debit,995000
+13-07-2023-14-15-01,12,Credit,995012
