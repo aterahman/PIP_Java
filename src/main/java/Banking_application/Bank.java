@@ -40,16 +40,16 @@ public class Bank
                     System.out.println("Do you want to get:\n1. Account Balance\n2. Transaction History");
                     int ch = sc.nextInt();
                     switch (ch)
-                        {
-                            //getting account balance
-                            case 1: account.get_account_balance();
-                                    break;
-                            //getting the transaction history of the enterred account number
-                            case 2: account.get_account_transaction_history();
-                                    break;
-                            default: System.out.println("Invalid Input");
-                                    break;
-                        }
+                    {
+                        //getting account balance
+                        case 1: account.get_account_balance();
+                            break;
+                        //getting the transaction history of the enterred account number
+                        case 2: account.get_account_transaction_history();
+                            break;
+                        default: System.out.println("Invalid Input");
+                            break;
+                    }
 
                 }
                 //withdrawing amount and recording the same
@@ -76,7 +76,6 @@ public class Bank
                 {
                     System.out.println("Enter account number of account to be removed");
                     String acc_remove = sc.next();
-                    account.validate_accnumber();
                     deleteAccount.remove_account(acc_remove);
 
                 }

@@ -11,7 +11,7 @@ public class Delete_account
     public void remove_account(String acc_to_be_removed)
     {
         //creating aremporary file to store data while the account is being removed
-        String temp_file = "src\\main\\resources\\temp.csv";
+        String temp_file = "temp.csv";
 
         String filepath = "src\\main\\resources\\accounts.csv";
 
@@ -39,7 +39,7 @@ public class Delete_account
                 balance= sc.next();
 
                 //writing data into temporary file
-                if(!acc_num.equals(acc_to_be_removed))
+                if(!acc_num.trim().equals(acc_to_be_removed))
                 {
                     pw.println(acc_num+","+acc_type+","+name+","+age+","+balance);
                 }
@@ -50,10 +50,13 @@ public class Delete_account
             csvfile.delete();
             File dump = new File(filepath);
             tempfile.renameTo(dump);
+            tempfile.delete();
+            System.out.println("Account deleted!");
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
+
     }
 }
