@@ -1,5 +1,6 @@
 package Banking_application;
 
+import Banking_application.Banking_Exceptions.Transaction_exceptions.Validate_Withdrawal_Amount;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
@@ -30,8 +31,24 @@ public class Transactions
     public void withdraw()
     {
         Scanner sc = new Scanner(System.in);
+        Validate_Withdrawal_Amount validateWithdrawalAmount = new Validate_Withdrawal_Amount();
+
+        //entering amount to be withdrawn
         System.out.println("Enter the amount you want to withdraw");
         long withdrawal_amt = sc.nextLong();
+
+        //validating the amount to be withdrawn
+        try
+        {
+            validateWithdrawalAmount.Validate_Withdrawal_Amount(withdrawal_amt,acc_balance);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Exception occured: " + e);
+            System.exit(-1);
+        }
+
+
         long new_acc_balance = acc_balance-withdrawal_amt;
         System.out.println("Rs"+withdrawal_amt + " Withdrawn!");
 
