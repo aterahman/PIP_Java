@@ -28,7 +28,7 @@ public class Delete_account
             PrintWriter pw = new PrintWriter(bw);
 
             Scanner sc = new Scanner(csvfile);
-            sc.useDelimiter("[,\n]");
+            sc.useDelimiter(",|\n");
 
             while (sc.hasNext())
             {
@@ -39,7 +39,7 @@ public class Delete_account
                 balance= sc.next();
 
                 //writing data into temporary file
-                if(!acc_num.trim().equals(acc_to_be_removed))
+                if(!acc_num.equals(acc_to_be_removed))
                 {
                     pw.println(acc_num+","+acc_type+","+name+","+age+","+balance);
                 }
