@@ -1,6 +1,8 @@
 package Banking_application;
 
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Bank
@@ -11,6 +13,7 @@ public class Bank
         int choice;
         Account_Creation accountCreation = new Account_Creation();
         Account account = new Account();
+        Transactions transactions = new Transactions();
 
 
         do {
@@ -47,6 +50,25 @@ public class Bank
                                     break;
                         }
 
+                }
+                //withdrawing amount and recording the same
+                case 3 ->
+                {
+                    transactions.getting_account_details();
+                    try {
+                        transactions.withdraw();
+                    }
+                    catch (Exception e){}
+                }
+
+                //depositing amount and recording the same
+                case 4 ->
+                {
+                    transactions.getting_account_details();
+                    try{
+                        transactions.deposit();
+                    }
+                    catch (Exception ignore){}
                 }
             }
 
