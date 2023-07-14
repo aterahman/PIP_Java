@@ -106,39 +106,7 @@ public class outputHashMap
                 outputhashmap.put(new_key,new_value);
             }
         }
-
-        //comparing values to see if they are equal
-        for(int i = 0; i<map1_values.size(); i++)
-        {
-            for(int j =0; j<map2_values.size(); j++)
-            {
-                int map1_value,map2_value;
-                String new_map1_key="", new_map2_key="";
-
-                //checking if the values at the given indexes match
-                if(((map1_values.toArray())[i]).equals((map2_values.toArray())[j]))
-                {
-                    new_map1_key = (map1_keys.toArray())[i].toString();
-                    new_map2_key = (map2_keys.toArray())[j].toString();
-                }
-                if(!new_map1_key.isEmpty() && !new_map2_key.isEmpty() && !new_map1_key.equals(new_map2_key))
-                {
-                    System.out.println("Keys with same values are :");
-                    System.out.println(new_map1_key + "&" + new_map2_key);
-
-                    System.out.println("Their values are : ");
-                    System.out.println(map1.get(new_map1_key) + "&" + map2.get(new_map2_key));
-
-                    //adding the keys and values to output map
-                    outputhashmap.put(new_map1_key,map1.get(new_map1_key));
-                    outputhashmap.put(new_map2_key,map2.get(new_map2_key));
-                }
-            }
-        }
-
-
         this.outputMap = outputhashmap;
-
     }
 
     //printing all the values
@@ -160,9 +128,5 @@ public class outputHashMap
         //printing the output map
         System.out.println("Output Map is :"+outputMap);
     }
-
-
-
-
-
+    
 }
