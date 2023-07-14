@@ -117,7 +117,7 @@ public class Go_TO
             int initial_instructions_count = instructions.size();
             int duplicates_count =0;
 
-            for(int i =0; i<(instructions.size()-1);i++)
+            for(int i =0; i<(instructions.size());i++)
             {
                 for(int j = i+1;j<instructions.size();j++)
                 {
