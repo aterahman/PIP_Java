@@ -1,4 +1,4 @@
-package Student_Information_System_Main_Assignment.Login_Screen;
+package Student_Information_System_Main_Assignment.Login_and_registration_Screen;
 
 import Student_Information_System_Main_Assignment.Exceptions.Login_related_exceptions.Validate_Login;
 
