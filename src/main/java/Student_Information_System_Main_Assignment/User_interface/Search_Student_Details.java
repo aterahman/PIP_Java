@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 public class Search_Student_Details
 {
+    public String searched_name,searched_age,searched_course,searche_grade;
+
     public void Search_Details(String roll_no) throws IOException {
         File acc_data_csv = new File("src\\main\\resources\\Student_Information_System_Resources\\Student_Details.csv");
 
@@ -35,7 +37,17 @@ public class Search_Student_Details
 
                 System.out.println("Name | Roll No. | Age | Course | Grade");
                 System.out.println(name+" | "+roll_no_in_csv+" | "+age+" | "+course+" | "+grade);
+                store_data(name,age,course,grade);
             }
         }
+    }
+
+    //storing data for other usage such as updating
+    public void store_data(String name,String age, String course, String grade)
+    {
+        this.searched_name = name;
+        this.searched_age=age;
+        this.searched_course=course;
+        this.searche_grade=grade;
     }
 }
