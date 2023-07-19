@@ -1,4 +1,4 @@
-package Student_Information_System_Main_Assignment.Login_Screen;
+package Student_Information_System_Main_Assignment.Login_and_registration_Screen;
 
 import Student_Information_System_Main_Assignment.Exceptions.Registration_related_exceptions.Validate_Registration;
 
@@ -18,15 +18,16 @@ public class User_Registration
 
         //entering name
         System.out.println("Enter Name");
-        String name = sc.next();
+        String name = sc.nextLine();
 
         //entering username
         System.out.println("Enter Username");
-        String username = sc.next();
+        String username = sc.nextLine();
 
-        //checking if username already exists
+        //checking if username already exists and if it meets requirements
         try {
-            validateRegistration.Validate_Username(username);
+            validateRegistration.Validate_Username_Existence(username);
+            validateRegistration.Validate_Username_requirements(username);
         }
         catch (Exception e)
         {
