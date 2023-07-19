@@ -15,16 +15,15 @@ import java.util.Scanner;
 
 public class Delete_Student_Details
 {
+    //method to delete data based on roll no. enterred
     public void Delete_Student_Details(String roll_number_to_remove)
     {
-        //creating a temporary file to store data while the account is being removed
-        String temp_file = "temp.csv";
+        //storing the data temporarily in lists and then shifting them to a new file with same name
 
         String filepath = "src\\main\\resources\\Student_Information_System_Resources\\Student_Details.csv";
 
         File csvfile = new File(filepath);
 
-        File tempfile = new File(temp_file);
 
         //list to temporarily store role number
         List<String> temp_roll_no_list = new ArrayList<>();
